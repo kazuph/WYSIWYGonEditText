@@ -19,7 +19,7 @@ public class MainActivity extends Activity {
 
 		EditText et = (EditText) findViewById(R.id.editText1);
 
-		// EditText‚É‰æ‘œ‚ğ‘}“ü‚µ‚½‚¢ ‚»‚Ì‚P
+		// EditTextã«ç”»åƒã‚’æŒ¿å…¥ã—ãŸã„ ãã®ï¼‘
 		SpannableString ss = new SpannableString("abc");
 		Drawable d = getBaseContext().getResources().getDrawable(
 				R.drawable.ic_launcher);
@@ -27,18 +27,18 @@ public class MainActivity extends Activity {
 		ImageSpan span = new ImageSpan(d, ImageSpan.ALIGN_BASELINE);
 		ss.setSpan(span, 0, 3, Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
 		et.setText(ss);
-		// append‚µ‚Ä‚à‚È‚º‚©abc‚Æ‚µ‚©o‚È‚¢
+		// appendã—ã¦ã‚‚ãªãœã‹abcã¨ã—ã‹å‡ºãªã„
 		et.append(ss);
 		et.append(ss);
 		et.append(ss);
 
-		// ‘¾•¶š
+		// å¤ªæ–‡å­—
 		et.append(Html.fromHtml("<br /><b>bold</b>"));
 
-		// Î‘Ì
+		// æ–œä½“
 		et.append(Html.fromHtml("<br /><i>italic</i>"));
 
-		// ‰ºü
+		// ä¸‹ç·š
 		et.append(Html.fromHtml("<br /><u>under line</u>"));
 
 		// big
@@ -48,20 +48,23 @@ public class MainActivity extends Activity {
 		et.append(Html.fromHtml("<br /><small>Strike</small>"));
 
 		// color
-		et.append(Html.fromHtml("<br />" + "<font color='#ff0000'>Ô</font>"
-				+ "<font color='#888800'>‰©</font>"
-				+ "<font color='#00ff00'>—Î</font>"
-				+ "<font color='#008888'>Â—Î</font>"
-				+ "<font color='#0000ff'>Â</font>"
-				+ "<font color='#880088'>‡</font><br>"));
+		et.append(Html.fromHtml("<br />" + "<font color='#ff0000'>èµ¤</font>"
+				+ "<font color='#888800'>é»„</font>"
+				+ "<font color='#00ff00'>ç·‘</font>"
+				+ "<font color='#008888'>é’ç·‘</font>"
+				+ "<font color='#0000ff'>é’</font>"
+				+ "<font color='#880088'>ç´«</font>"));
+		
+		// å¼•ç”¨
+		et.append(Html.fromHtml("<br /><blockquote>blockquote</blockquote>"));
 
-		// EditText‚É‰æ‘œ‚ğ‘}“ü‚µ‚½‚¢ ‚»‚Ì‚Q
+		// EditTextã«ç”»åƒã‚’æŒ¿å…¥ã—ãŸã„ ãã®ï¼’
 		Html.ImageGetter ig = new Html.ImageGetter() {
 			public Drawable getDrawable(String source) {
 				Drawable dr = getResources()
 						.getDrawable(R.drawable.ic_launcher);
 
-				// ‘å‚«‚³‚ğw’è‚Å‚«‚é
+				// å¤§ãã•ã‚’æŒ‡å®šã§ãã‚‹
 				dr.setBounds(0, 0, 200, 200);
 				return dr;
 			}
